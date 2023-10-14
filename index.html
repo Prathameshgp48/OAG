@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Art Gallery</title>
+</head>
+<body>
+    <h1>Online Art Gallery</h1>
+
+    <h2>Create Artist Profile</h2>
+    <form action="/create_artist_profile" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" required></textarea><br>
+        <button type="submit">Create Profile</button>
+    </form>
+
+    <h2>Add Artwork</h2>
+    <form action="/add_artwork" method="POST">
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" required><br>
+        <label for="artwork">Artwork:</label>
+        <input type="text" id="artwork" name="artwork" required><br>
+        <button type="submit">Add Artwork</button>
+    </form>
+
+    <h2>Buy Artwork</h2>
+    <form action="/buy_artwork" method="POST">
+        <label for="artwork">Artwork:</label>
+        <input type="text" id="artwork" name="artwork" required><br>
+        <label for="customer">Customer:</label>
+        <input type="text" id="customer" name="customer" required><br>
+        <button type="submit">Buy Artwork</button>
+    </form>
+
+    <h2>Artists</h2>
+    <ul>
+        <!-- Display artists here -->
+        <li>Artist 1</li>
+        <li>Artist 2</li>
+    </ul>
+
+    <h2>Available Artworks</h2>
+    <ul>
+        <!-- Display available artworks here -->
+        <li>Artwork 1</li>
+        <li>Artwork 2</li>
+    </ul>
+</body>
+</html>
