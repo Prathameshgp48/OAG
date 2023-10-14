@@ -4,7 +4,7 @@ class Artist {
         this.bio = bio;
         this.portfolio = [];
         this.connections = [];
-        this.followers = []; // New feature to track artist followers.
+        this.followers = [];
     }
 
     addArtwork(artwork) {
@@ -30,8 +30,14 @@ class Artist {
         }
     }
 
-    getFollowers() {
-        console.log(`Followers of ${this.name}: ${this.followers.join(', ')}`);
+    sellArtwork(artwork, ecommerce) {
+        if (this.portfolio.includes(artwork)) {
+            this.portfolio = this.portfolio.filter(a => a !== artwork);
+            ecommerce.addArtwork(artwork);
+            console.log(`${this.name} has added '${artwork}' for sale.`);
+        } else {
+            console.log(`Artwork '${artwork}' is not in the artist's portfolio.`);
+        }
     }
 }
 
