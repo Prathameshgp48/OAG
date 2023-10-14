@@ -1,6 +1,7 @@
 class EcommercePortal {
     constructor() {
         this.artworks = [];
+        this.orders = [];
     }
 
     addArtwork(artwork) {
@@ -8,7 +9,20 @@ class EcommercePortal {
     }
 
     buyArtwork(artwork, customer) {
-        // Add logic to handle the purchase of artwork by a customer.
+        if (this.artworks.includes(artwork)) {
+            this.orders.push({ artwork, customer });
+            this.artworks = this.artworks.filter(a => a !== artwork);
+            console.log(`${customer} has purchased '${artwork}'.`);
+        } else {
+            console.log(`Artwork '${artwork}' is not available.`);
+        }
+    }
+
+    viewOrders() {
+        console.log('List of Orders:');
+        for (const order of this.orders) {
+            console.log(`Artwork: ${order.artwork}, Customer: ${order.customer}`);
+        }
     }
 }
 
