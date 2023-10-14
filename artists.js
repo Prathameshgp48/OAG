@@ -3,6 +3,7 @@ class Artist {
         this.name = name;
         this.bio = bio;
         this.portfolio = [];
+        this.connections = []; 
     }
 
     addArtwork(artwork) {
@@ -10,11 +11,15 @@ class Artist {
     }
 
     connectWithArtist(artist) {
-        // Add logic to establish connections with other artists.
+        if (artist !== this) {
+            this.connections.push(artist);
+            artist.connections.push(this);
+            console.log(`${this.name} is now connected with ${artist.name}.`);
+        }
     }
 
     searchExhibitions(query) {
-        // Add logic to search for art exhibitions.
+        console.log(`${this.name} is searching for exhibitions related to '${query}'.`);
     }
 }
 
